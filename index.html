@@ -1,776 +1,197 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundación Banco de Bogotá - Sembrando oportunidades, transformando territorios</title>
-    <!-- Google Fonts: Urbanist & Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Urbanist:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        midnight: {
-                            900: '#00317E',
-                            800: '#0043A9',
-                            200: '#D4E5F8',
-                            50:  '#F0F6FD',
-                        },
-                        nature: {
-                            600: '#059669',
-                            500: '#10B981',
-                            100: '#D1FAE5',
-                        },
-                        warm: {
-                            500: '#F59E0B',
-                            100: '#FEF3C7',
-                        },
-                        brand: {
-                            yellow: '#FFBF00',
-                            red: '#EE2E2E'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Urbanist', 'sans-serif'],
-                    },
-                    borderRadius: {
-                        '4xl': '2rem',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-        .glass-dark {
-            background: rgba(0, 49, 126, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-    </style>
-</head>
-<body class="font-sans bg-midnight-50 text-slate-800 antialiased selection:bg-midnight-800 selection:text-white">
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fundación Banco de Bogotá — Nuestro impacto es contigo</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap">
+<style>
+:root{--b8:#0043A9;--b9:#00317E;--b2:#D4E5F8;--y:#FFBF00;--r:#EE2E2E;--bg:#F7FAFE;--ink:#14213D;--mut:#4B5A75;--card:#fff;--line:#E3EAF5;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1730;--ink:#EAF1FB;--mut:#B3C2DB;--card:#12244A;--line:#243A68}}
+:root[data-theme="dark"]{--bg:#0B1730;--ink:#EAF1FB;--mut:#B3C2DB;--card:#12244A;--line:#243A68}
+*,*:before,*:after{box-sizing:inherit}html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Roboto,system-ui,sans-serif}
+h1,h2,h3{font-family:Outfit,Roboto,sans-serif;line-height:1.1;margin:0;letter-spacing:-.01em}
+img{max-width:100%;display:block}a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:14px;padding:15px 26px;font:600 17px Outfit,sans-serif;text-decoration:none;border:2px solid var(--b8);cursor:pointer;transition:.2s}
+.btn.w{background:#fff;color:var(--b8)}.btn.w:hover{background:var(--b2)}
+.btn.p{background:var(--b8);color:#fff}.btn.p:hover{background:var(--b9)}
+.btn.o{background:transparent;color:#fff;border-color:#fff}.btn.o:hover{background:#ffffff22}
+:focus-visible{outline:3px solid var(--y);outline-offset:3px}
+/* header global */
+.gh{position:sticky;top:10px;z-index:50;margin:10px 14px 0}
+.gh .bar{background:var(--b8);border-radius:28px;display:flex;align-items:center;gap:22px;padding:12px 28px;color:#fff;max-width:1500px;margin:0 auto}
+.gh img{height:46px}.seg{display:flex;border:2px solid #ffffffaa;border-radius:16px;padding:4px;gap:2px}
+.seg span{padding:8px 20px;border-radius:12px;font:500 16px Roboto}.seg .on{background:#B7CDF1;color:var(--b8)}
+.gh nav{margin-left:auto;display:flex;gap:28px;align-items:center;font:500 16px Roboto}.gh nav a{text-decoration:none}
+.ing{background:#fff;color:var(--b8);padding:12px 22px;border-radius:12px;font-weight:500}
+.burger{display:none;margin-left:auto;background:none;border:0;color:#fff;font-size:28px}
+.tag{font:500 13px Roboto;background:var(--y);color:var(--b9);padding:3px 10px;border-radius:99px;margin-left:6px}
+/* hero */
+.hero{position:relative;margin:-84px 14px 0;border-radius:36px;overflow:hidden;min-height:700px;color:#fff;display:flex;align-items:center;background:var(--b9)}
+.hero .sl{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s}.hero .sl.on{opacity:1}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#00173fcc 0%,#00173f66 55%,#00173f11 100%)}
+.hero .in{position:relative;z-index:2;padding:150px 0 130px;max-width:700px}
+.hero h1{font-size:clamp(44px,7vw,84px);font-weight:700;margin:12px 0 20px}
+.hero p{font-size:20px;max-width:560px;margin:0 0 30px}.kick{font:600 15px Outfit;letter-spacing:.14em}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.dots{position:absolute;right:36px;bottom:80px;z-index:3;display:flex;gap:8px}
+.dots button{width:12px;height:12px;border-radius:50%;border:2px solid #fff;background:none;padding:0;cursor:pointer}.dots .on{background:var(--y);border-color:var(--y)}
+.quick{position:relative;z-index:5;max-width:960px;margin:-58px auto 0;background:var(--card);border:1px solid var(--line);border-radius:22px;display:grid;grid-template-columns:repeat(3,1fr);box-shadow:0 12px 30px #00317e1f}
+.quick a{display:flex;gap:16px;align-items:center;padding:22px 26px;text-decoration:none;border-right:1px solid var(--line)}.quick a:last-child{border:0}
+.quick a:hover{background:var(--b2)}.quick .ic{width:52px;height:52px;border-radius:14px;background:var(--b2);display:grid;place-items:center;flex:none}
+.quick small{display:block;color:var(--mut);font-size:14px}.quick b{font:600 20px Outfit}
+section{padding:90px 0}.h2{font-size:clamp(30px,4vw,46px);font-weight:700;color:var(--b8);margin-bottom:14px}
+[data-theme=dark] .h2{color:#fff}@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .h2{color:#fff}}
+.lead{color:var(--mut);max-width:680px;margin:0 0 40px}
+/* kpis */
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px 20px;border-top:5px solid var(--b8)}
+.kpi:nth-child(2n){border-top-color:var(--y)}.kpi:nth-child(3n){border-top-color:var(--r)}
+.kpi b{font:700 clamp(30px,3.4vw,42px) Outfit;color:var(--b8);display:block}[data-theme=dark] .kpi b{color:#fff}
+.kpi span{color:var(--mut);font-size:15px;line-height:1.35;display:block;margin-top:6px}
+/* director */
+.dir{background:var(--b2);border-radius:36px;display:grid;grid-template-columns:340px 1fr;gap:48px;align-items:center;padding:48px;color:#14213D}
+.avatar{aspect-ratio:4/5;border-radius:26px;background:linear-gradient(160deg,var(--b8),var(--b9));display:grid;place-items:center;color:#fff;font:700 80px Outfit;position:relative;overflow:hidden}
+.avatar small{position:absolute;bottom:12px;font:400 13px Roboto;opacity:.8}
+.dir blockquote{margin:0;font:500 clamp(20px,2.3vw,27px)/1.4 Outfit}.dir cite{display:block;margin-top:20px;font:normal 400 16px Roboto}.dir cite b{display:block;font:600 19px Outfit;color:var(--b8)}
+/* fronts */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:30px;overflow:hidden;display:grid;grid-template-columns:42% 1fr}
+.panel .ph{background-size:cover;background-position:center;min-height:480px;position:relative;background-color:var(--b9)}
+.panel .ph i{position:absolute;left:18px;bottom:18px;background:#fff;color:var(--b8);font:600 14px Outfit;padding:6px 14px;border-radius:99px;font-style:normal}
+.tabs{display:flex;border-bottom:2px solid var(--line);padding:0 32px;gap:8px;flex-wrap:wrap}
+.tabs button{background:none;border:0;border-bottom:4px solid transparent;margin-bottom:-2px;font:600 18px Outfit;color:var(--mut);padding:24px 14px 18px;cursor:pointer}
+.tabs button[aria-selected=true]{color:var(--b8);border-color:var(--b8)}[data-theme=dark] .tabs button[aria-selected=true]{color:#fff;border-color:var(--y)}
+.pb{padding:34px 40px}.pb h3{font-size:30px;margin-bottom:10px}.pb p{color:var(--mut);margin:0 0 20px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}.chips button{border:1.5px solid var(--b8);background:var(--b2);color:var(--b9);border-radius:99px;padding:8px 16px;font:500 15px Roboto;cursor:pointer}
+.chips button:hover,.chips button.on{background:var(--b8);color:#fff}.det{min-height:56px;font-size:16px;margin:-6px 0 22px;padding:12px 16px;border-left:4px solid var(--y);background:var(--bg)}
+.hubs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.hub{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;text-decoration:none;transition:.2s}.hub:hover{transform:translateY(-4px);border-color:var(--b8)}
+.hub code{font:500 13px Roboto;color:var(--mut)}.hub b{display:block;font:600 19px Outfit;margin:4px 0}
+/* volunteers */
+.vol{background:var(--b9);color:#fff;border-radius:36px;margin:0 14px;padding:80px 0}
+.vol .h2{color:#fff}.vol .lead{color:#C9D9F2}.vg{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.vol .ph{border-radius:28px;aspect-ratio:4/3;background-size:cover;background-position:center}
+.acc details{border-top:1px solid #ffffff33;padding:18px 0}.acc details:last-child{border-bottom:1px solid #ffffff33}
+.acc summary{font:600 21px Outfit;cursor:pointer;list-style:none;display:flex;justify-content:space-between}.acc summary:after{content:"+";color:var(--y);font-size:26px;line-height:1}
+.acc details[open] summary:after{content:"–"}.acc p{margin:10px 0 0;color:#C9D9F2}
+/* news */
+.fil{display:flex;gap:10px;margin-bottom:26px;flex-wrap:wrap}.fil button{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:9px 18px;font:500 15px Roboto;cursor:pointer}.fil .on{background:var(--b8);color:#fff;border-color:var(--b8)}
+.news{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.nw{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;display:flex;flex-direction:column}
+.nw .ph{aspect-ratio:16/10;background-size:cover;background-position:center;background-color:var(--b2)}.nw div.t{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.nw small{color:var(--mut)}.nw h3{font-size:21px}.nw a{margin-top:auto;color:var(--b8);font-weight:700;text-decoration:none}[data-theme=dark] .nw a{color:var(--y)}.nw[hidden]{display:none}
+/* allies */
+.mq{overflow:hidden;mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}.mq div{display:flex;gap:18px;width:max-content;animation:mv 40s linear infinite}.mq:hover div{animation-play-state:paused}
+.mq span{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 34px;font:600 20px Outfit;color:var(--b8);white-space:nowrap}[data-theme=dark] .mq span{color:#fff}
+@keyframes mv{to{transform:translateX(-50%)}}
+/* docs */
+.docs{display:grid;gap:14px}.doc{display:flex;align-items:center;gap:18px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 24px;text-decoration:none}.doc:hover{border-color:var(--b8)}
+.doc .pdf{background:var(--r);color:#fff;font:700 13px Outfit;border-radius:10px;padding:10px 8px}.doc b{font:600 19px Outfit}.doc span.d{margin-left:auto;color:var(--b8);font-weight:700}
+/* footer global */
+.gf{background:var(--b8);color:#fff;border-radius:36px 36px 0 0;margin:90px 14px 0;padding:56px 0 40px}.app{background:#2652B2;border-radius:28px;padding:30px 44px;display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.app .ico{width:84px;height:84px;border:3px solid #6C8FD6;border-radius:18px;display:grid;place-items:center;background:var(--b8)}.app .ico img{height:50px}.app h3{font-size:30px}.app p{margin:4px 0 0;max-width:460px}
+.stores{margin-left:auto;display:flex;gap:14px}.stores span{background:#000;border:1px solid #888;border-radius:10px;padding:8px 18px;font:500 14px Roboto}
+.cols{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:50px}.cols h4{font:700 26px Outfit;margin:0 0 20px}.cols a{display:block;text-decoration:none;margin-bottom:14px;font-size:16px}.cols a:hover{text-decoration:underline}
+.leg{margin-top:36px;padding-top:24px;border-top:1px solid #ffffff44;display:flex;gap:20px;align-items:center;flex-wrap:wrap;font-size:14px}.leg img{height:38px}
+.ayuda{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));background:#F8DA6C;color:var(--b9);font:600 18px Outfit;padding:16px 26px;border-radius:14px;z-index:60;border:0;box-shadow:0 6px 18px #0003}
+@media(max-width:980px){.gh nav,.seg{display:none}.burger{display:block}.gh.open .bar{flex-wrap:wrap}.gh.open nav{display:flex;flex-direction:column;align-items:flex-start;width:100%;gap:16px;padding:10px 0}
+.kpis{grid-template-columns:repeat(2,1fr)}.dir,.panel,.vg{grid-template-columns:1fr}.dir{padding:28px}.avatar{max-width:260px}.panel .ph{min-height:260px}.hubs,.news,.cols{grid-template-columns:1fr}
+.quick{grid-template-columns:1fr;margin:-40px 16px 0}.quick a{border-right:0;border-bottom:1px solid var(--line)}.hero{min-height:620px}.hero .in{padding:130px 0 100px}.dots{right:20px;bottom:60px}.pb{padding:26px 22px}.tabs{padding:0 12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.mq div{animation:none}.hero .sl{transition:none}}
+</style></head><body>
 
-    <!-- 1. HEADER / NAVEGACIÓN STICKY -->
-    <header class="sticky top-0 z-40 w-full glass-panel border-b border-midnight-200/50 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Logo Oficial Fundación -->
-                <a href="#" class="flex items-center space-x-3 group">
-                    <div class="relative w-10 h-10 flex items-center justify-center bg-midnight-800 rounded-xl text-white font-black text-xl shadow-md group-hover:scale-105 transition-transform">
-                        <span class="text-brand-yellow font-display">B</span>
-                        <div class="absolute -top-1 -right-1 w-3 h-3 bg-brand-red rounded-full"></div>
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="text-xs uppercase tracking-widest text-slate-500 font-semibold leading-none">Fundación</span>
-                        <span class="text-lg font-extrabold font-display text-midnight-900 tracking-tight leading-tight">Banco de Bogotá</span>
-                    </div>
-                </a>
+<!-- HEADER GLOBAL (componente del banco: reemplazar por el oficial) -->
+<header class="gh" id="gh"><div class="bar">
+<img src="images/logo-fundacion-blanco.png" alt="Fundación Banco de Bogotá"><div class="seg"><span class="on">Personas</span><span>Empresas</span></div>
+<button class="burger" aria-label="Menú" onclick="gh.classList.toggle('open')">☰</button>
+<nav><a href="#">Productos ⌄</a><a href="#">Pagos en línea ⌄</a><a href="#">Atención al cliente ⌄</a><a class="ing" href="#">Ingresar ⌄</a></nav></div></header>
 
-                <!-- Desktop Navigation -->
-                <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#nosotros" class="text-sm font-medium text-slate-700 hover:text-midnight-800 transition-colors">Nosotros</a>
-                    <a href="#frentes" class="text-sm font-medium text-slate-700 hover:text-midnight-800 transition-colors">Estrategia & Frentes</a>
-                    <a href="#simulador" class="text-sm font-medium text-slate-700 hover:text-midnight-800 transition-colors">Calculadora Impacto</a>
-                    <a href="#historias" class="text-sm font-medium text-slate-700 hover:text-midnight-800 transition-colors">Historias</a>
-                    <a href="#transparencia" class="text-sm font-medium text-slate-700 hover:text-midnight-800 transition-colors">Informe 2025</a>
-                </nav>
+<main>
+<div class="hero" id="hero">
+<div class="sl on" style="background-image:url(images/voluntarios-siembra.jpg)"></div><div class="sl" style="background-image:url(images/comunidad-amazonia.jpg)"></div><div class="sl" style="background-image:url(images/voluntarios-sonrisas.jpg)"></div>
+<div class="wrap"><div class="in"><div class="kick">FUNDACIÓN BANCO DE BOGOTÁ</div><h1>Nuestro impacto es contigo</h1>
+<p>Acompañamos la estrategia del Banco de Bogotá generando valor social, ambiental y económico en los territorios que más lo necesitan.</p>
+<div class="cta"><a class="btn w" href="#impacto">Descubre cómo estamos cambiando el país →</a><a class="btn o" href="#voluntariado">Explora el Voluntariado Corporativo</a></div></div></div>
+<div class="dots" id="dots"></div></div>
+<div class="quick">
+<a href="#frentes" data-go="0"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0043A9" stroke-width="2"><path d="M12 21V9M12 9c0-4 3-6 7-6 0 4-2 7-7 6zM12 13c0-3-2-5-6-5 0 3 2 6 6 5z"/></svg></span><span><small>Medio ambiente</small><b>Planeta</b></span></a>
+<a href="#frentes" data-go="1"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0043A9" stroke-width="2"><path d="M3 9l9-5 9 5-9 5zM7 12v5c3 2 7 2 10 0v-5"/></svg></span><span><small>Becas, música, aulas</small><b>Educación</b></span></a>
+<a href="#frentes" data-go="2"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0043A9" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-4 3-6 6-6s6 2 6 6M15 15c3 0 6 1 6 5"/></svg></span><span><small>Emprendimiento y comunidad</small><b>Vidas</b></span></a></div>
 
-                <!-- Actions -->
-                <div class="hidden md:flex items-center space-x-4">
-                    <button onclick="toggleModal(true)" class="inline-flex items-center justify-center px-6 py-2.5 rounded-full font-semibold text-sm text-white bg-midnight-800 hover:bg-midnight-900 shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0">
-                        <i class="fa-solid font-bold fa-heart mr-2 text-brand-yellow"></i> Dona Ahora
-                    </button>
-                </div>
+<section id="impacto"><div class="wrap"><h2 class="h2">Valor público generado</h2><p class="lead">Transparencia e impacto real de los recursos que invertimos junto a las comunidades.</p>
+<div class="kpis">
+<div class="kpi"><b data-n="1540" data-p="+$" data-s="M">0</b><span>Invertidos en desarrollo territorial e innovación social</span></div>
+<div class="kpi"><b data-n="118000" data-p="+">0</b><span>Árboles y mangles sembrados junto a comunidades locales</span></div>
+<div class="kpi"><b data-n="150" data-p="+">0</b><span>Jóvenes acompañados en educación superior STEM</span></div>
+<div class="kpi"><b data-n="600" data-p="+">0</b><span>Empleados movilizados en “Orgullosamente Cambiando”</span></div>
+<div class="kpi"><b data-n="11" data-p="">0</b><span>Organizaciones territoriales aliadas</span></div></div></div></section>
 
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-slate-700 hover:text-midnight-800 p-2 focus:outline-none">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
+<section style="padding-top:0"><div class="wrap"><div class="dir"><div class="avatar">MV<small>Foto pendiente</small></div>
+<div><blockquote>“En la Fundación Banco de Bogotá sumamos el conocimiento, el talento de nuestros colaboradores y el rigor técnico del Banco para crear oportunidades reales. Acompañamos la estrategia corporativa asegurando que cada proyecto genere un impacto sostenible, con rostro humano y directo en las comunidades.”</blockquote>
+<b>María del Mar Vélez Mejía</b>Directora, Fundación Banco de Bogotá</div></div></div></section>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
-            <a href="#nosotros" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-slate-700 hover:text-midnight-800">Nosotros</a>
-            <a href="#frentes" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-slate-700 hover:text-midnight-800">Estrategia & Frentes</a>
-            <a href="#simulador" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-slate-700 hover:text-midnight-800">Calculadora Impacto</a>
-            <a href="#historias" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-slate-700 hover:text-midnight-800">Historias</a>
-            <a href="#transparencia" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-slate-700 hover:text-midnight-800">Informe 2025</a>
-            <button onclick="toggleModal(true); toggleMobileMenu();" class="w-full mt-4 py-3 rounded-xl font-semibold text-white bg-midnight-800 text-center">
-                <i class="fa-solid fa-heart mr-2 text-brand-yellow"></i> Dona Ahora
-            </button>
-        </div>
-    </header>
+<section id="frentes" style="padding-top:20px"><div class="wrap"><h2 class="h2">Orgullosamente cambiando</h2><p class="lead">Tres frentes de impacto. Elige uno para ver sus programas y entrar a su página.</p>
+<div class="panel"><div class="ph" id="fph"><i id="fcap"></i></div><div><div class="tabs" role="tablist" id="tabs"></div><div class="pb" id="pb"></div></div></div>
+<div class="hubs" id="hubs"></div></div></section>
 
-    <!-- 2. HERO SECTION -->
-    <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-midnight-200/60 text-midnight-900 text-xs font-bold tracking-wide uppercase">
-                        <span class="w-2 h-2 rounded-full bg-nature-500 animate-pulse"></span>
-                        <span>Brazo Filantrópico y Social del Banco de Bogotá</span>
-                    </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display text-midnight-900 leading-tight tracking-tight">
-                        Sembrando oportunidades, <span class="text-midnight-800 underline decoration-brand-yellow decoration-4 underline-offset-4">transformando territorios.</span>
-                    </h1>
-                    <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        Conectamos conocimientos, recursos y capacidades para impulsar el desarrollo sostenible, la educación de calidad y la regeneración ambiental en las regiones de Colombia.
-                    </p>
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
-                        <a href="#frentes" class="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-midnight-800 hover:bg-midnight-900 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center">
-                            Explorar Frentes
-                        </a>
-                        <button onclick="toggleModal(true)" class="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-midnight-900 bg-white border border-midnight-200 hover:bg-midnight-50 shadow-sm transition-all text-center">
-                            Sumarte a la Causa
-                        </button>
-                    </div>
-                </div>
+<div class="vol" id="voluntariado"><div class="wrap"><div class="vg"><div><h2 class="h2">Orgullosamente cambiando desde adentro</h2><p class="lead">Los empleados del Banco de Bogotá participan activamente: ponen su conocimiento y su tiempo al servicio de los territorios.</p>
+<div class="acc"><details open><summary>Educación financiera en colegios públicos</summary><p>Ejecutivos y analistas del Banco dictan talleres de educación financiera a estudiantes de colegios públicos.</p></details>
+<details><summary>Mentorías C-Level para EcoTech</summary><p>Acompañamiento técnico y mentorías de líderes del Banco a los emprendedores de EcoTech.</p></details>
+<details><summary>Siembras y trabajo comunitario</summary><p>Jornadas de siembra y trabajo junto a las comunidades, que suman a la restauración de ecosistemas.</p></details></div>
+<p style="margin-top:28px"><a class="btn w" href="#">Quiero participar →</a></p></div>
+<div class="ph" style="background-image:url(images/voluntarios-siembra.jpg)" role="img" aria-label="Voluntarios del Banco de Bogotá en una jornada de siembra"></div></div></div></div>
 
-                <!-- Hero Visual & Floating Cards -->
-                <div class="lg:col-span-5 relative">
-                    <div class="relative mx-auto max-w-md lg:max-w-none">
-                        <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl bg-midnight-900 relative">
-                            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1000&q=80" alt="Reforestación y sostenibilidad" class="w-full h-full object-cover opacity-90">
-                            <div class="absolute inset-0 bg-gradient-to-t from-midnight-900/80 via-transparent to-transparent"></div>
-                            <div class="absolute bottom-6 left-6 right-6 text-white">
-                                <span class="text-xs font-semibold uppercase tracking-wider text-nature-100 bg-nature-600/60 px-3 py-1 rounded-full backdrop-blur-md">Amazonía & Caribe</span>
-                                <h3 class="text-xl font-bold mt-2 font-display">Restauración Ecológica</h3>
-                            </div>
-                        </div>
+<section id="noticias"><div class="wrap"><h2 class="h2">Historias y noticias del territorio</h2><p class="lead">Lo que está pasando donde trabajamos.</p>
+<div class="fil" id="fil"><button class="on" data-f="all">Todas</button><button data-f="Educación">Educación</button><button data-f="Vidas">Vidas</button><button data-f="Planeta">Planeta</button></div>
+<div class="news">
+<article class="nw" data-c="Educación"><div class="ph"></div><div class="t"><small>Educación · Foto pendiente</small><h3>Así avanza el programa Armonía en Progreso en La Boquilla y Mompox</h3><a href="#">Leer historia →</a></div></article>
+<article class="nw" data-c="Vidas"><div class="ph" style="background-image:url(images/voluntarios-sonrisas.jpg)"></div><div class="t"><small>Vidas · Convocatoria abierta</small><h3>Mentores C-Level acompañarán la nueva cohorte de EcoTech</h3><a href="#">Conocer la convocatoria →</a></div></article>
+<article class="nw" data-c="Educación"><div class="ph" style="background-image:url(images/voluntarias-banco-alimentos.jpg)"></div><div class="t"><small>Educación · Con País de Raíz</small><h3>Avances de la jornada de recuperación escolar junto a País de Raíz</h3><a href="#">Leer historia →</a></div></article></div></div></section>
 
-                        <!-- Floating Card 1: Becas -->
-                        <div class="absolute -top-6 -left-6 sm:-left-8 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-100 max-w-[220px] hidden sm:block">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 rounded-xl bg-midnight-200 flex items-center justify-center text-midnight-800">
-                                    <i class="fa-solid fa-graduation-cap text-lg"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-slate-500 font-medium">Becas Juan María R.</p>
-                                    <p class="text-sm font-bold text-midnight-900">150 Jóvenes STEM</p>
-                                </div>
-                            </div>
-                        </div>
+<section style="padding-top:0"><div class="wrap"><h2 class="h2">Juntos generamos mayor impacto</h2><p class="lead">Una red de alianzas estratégicas en el territorio.</p></div>
+<div class="mq"><div id="mq"></div></div></section>
 
-                        <!-- Floating Card 2: EcoTech -->
-                        <div class="absolute -bottom-6 -right-6 sm:-right-8 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-100 max-w-[220px] hidden sm:block">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 rounded-xl bg-nature-100 flex items-center justify-center text-nature-600">
-                                    <i class="fa-solid fa-seedling text-lg"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-slate-500 font-medium">Programa EcoTech</p>
-                                    <p class="text-sm font-bold text-midnight-900">51 Startups Verdes</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<section style="padding-top:0"><div class="wrap"><h2 class="h2">Transparencia e informes de gestión</h2><p class="lead">Descarga directa de nuestros documentos públicos.</p>
+<div class="docs"><a class="doc" href="#"><span class="pdf">PDF</span><b>Informe de Gestión y Sostenibilidad 2025/2026</b><span class="d">Descargar</span></a>
+<a class="doc" href="#"><span class="pdf">PDF</span><b>Estados Financieros Auditados</b><span class="d">Descargar</span></a>
+<a class="doc" href="#"><span class="pdf">PDF</span><b>Marco legal, certificados y estatutos de la Fundación</b><span class="d">Descargar</span></a></div></div></section>
+</main>
 
-            <!-- Key Metrics Bar -->
-            <div class="mt-16 pt-8 border-t border-slate-200/80 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-                <div class="p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-slate-100 shadow-sm">
-                    <p class="text-3xl sm:text-4xl font-extrabold font-display text-midnight-900">$1.574M+</p>
-                    <p class="text-sm font-medium text-slate-600 mt-1">Inversión Ejecutada 2025</p>
-                </div>
-                <div class="p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-slate-100 shadow-sm">
-                    <p class="text-3xl sm:text-4xl font-extrabold font-display text-nature-600">+118.000</p>
-                    <p class="text-sm font-medium text-slate-600 mt-1">Árboles y Mangles Sembrados</p>
-                </div>
-                <div class="p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-slate-100 shadow-sm">
-                    <p class="text-3xl sm:text-4xl font-extrabold font-display text-midnight-800">+10.000</p>
-                    <p class="text-sm font-medium text-slate-600 mt-1">Personas y Familias Impactadas</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- FOOTER GLOBAL (componente del banco: reemplazar por el oficial) -->
+<footer class="gf"><div class="wrap"><div class="app"><div class="ico"><img src="images/isotipo.png" alt=""></div><div><h3>App del Banco de Bogotá</h3><p>Gestiona y consulta tus productos, envía dinero y solicita ayuda en cualquier momento.</p></div><div class="stores"><span>Google Play</span><span>App Store</span></div></div>
+<div class="cols"><div><h4>Atención al cliente</h4><a href="#">¿Necesitas ayuda?</a><a href="#">Canales de atención</a><a href="#">Protección al consumidor</a><a href="#">Defensor del consumidor</a></div>
+<div><h4>Beneficios</h4><a href="#">Alianzas Banco de Bogotá</a><a href="#">Programa de lealtad Tuplús</a><a href="#">Opciones para ponerte al día</a><a href="#">Asistencias</a></div>
+<div><h4>Información</h4><a href="#">Tasas y tarifas</a><a href="#">Nuestras bancas</a><a href="#">Sostenibilidad</a><a href="#">Transparencia</a></div>
+<div><h4>Contacto</h4><a href="#">Servilíneas</a><a href="#">Oficinas</a><a href="#">WhatsApp</a></div></div>
+<div class="leg"><img src="images/logo-fundacion-blanco.png" alt="Fundación Banco de Bogotá"><span>© Fundación Banco de Bogotá. Todos los derechos reservados.</span></div></div></footer>
+<button class="ayuda" aria-label="Ayuda">Ayuda</button>
 
-    <!-- 3. ACERCA DE & MENSAJE INSTITUCIONAL -->
-    <section id="nosotros" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-midnight-50 rounded-3xl p-8 sm:p-12 lg:p-16 border border-midnight-200/60 shadow-sm">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    
-                    <!-- Perfil Directora -->
-                    <div class="lg:col-span-4 text-center">
-                        <div class="relative inline-block">
-                            <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden mx-auto shadow-xl ring-4 ring-white border-2 border-midnight-200">
-                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Maria del Mar Vélez Mejía" class="w-full h-full object-cover">
-                            </div>
-                            <div class="absolute bottom-2 right-4 bg-midnight-800 text-white p-3 rounded-full shadow-lg">
-                                <i class="fa-solid fa-quote-right text-sm"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold font-display text-midnight-900 mt-6">Maria del Mar Vélez Mejía</h3>
-                        <p class="text-sm font-medium text-midnight-800">Directora Fundación Banco de Bogotá</p>
-                    </div>
-
-                    <!-- Cita & Pilares ESG -->
-                    <div class="lg:col-span-8 space-y-6">
-                        <h2 class="text-2xl sm:text-3xl font-extrabold font-display text-midnight-900">
-                            "El desarrollo de un país se construye cuando las oportunidades llegan a los territorios donde más se necesitan."
-                        </h2>
-                        <p class="text-slate-600 leading-relaxed text-base sm:text-lg">
-                            Bajo esta convicción, conectamos capacidades, conocimiento y recursos para impulsar el progreso comunitario y generar transformaciones reales e inclusivas en Colombia.
-                        </p>
-
-                        <!-- ESG Badges -->
-                        <div class="pt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            <div class="flex items-center space-x-3 p-3 bg-white rounded-xl border border-slate-200">
-                                <div class="w-8 h-8 rounded-lg bg-nature-100 flex items-center justify-center text-nature-600 font-bold text-sm">A</div>
-                                <span class="text-xs font-bold text-slate-700 uppercase tracking-wider">Ambiental</span>
-                            </div>
-                            <div class="flex items-center space-x-3 p-3 bg-white rounded-xl border border-slate-200">
-                                <div class="w-8 h-8 rounded-lg bg-midnight-200 flex items-center justify-center text-midnight-800 font-bold text-sm">S</div>
-                                <span class="text-xs font-bold text-slate-700 uppercase tracking-wider">Social</span>
-                            </div>
-                            <div class="flex items-center space-x-3 p-3 bg-white rounded-xl border border-slate-200">
-                                <div class="w-8 h-8 rounded-lg bg-warm-100 flex items-center justify-center text-warm-500 font-bold text-sm">G</div>
-                                <span class="text-xs font-bold text-slate-700 uppercase tracking-wider">Gobierno</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. NUESTROS 3 FRENTES ESTRATÉGICOS (TABS INTERACTIVAS) -->
-    <section id="frentes" class="py-20 bg-midnight-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-xs uppercase font-extrabold tracking-widest text-midnight-800">Estrategia de Impacto</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-midnight-900 mt-2">Nuestros 3 Frentes Estratégicos</h2>
-                <p class="text-slate-600 mt-3">Estructuramos nuestras acciones para abordar los retos más urgentes del país con soluciones de fondo y sostenibles.</p>
-            </div>
-
-            <!-- Tab Buttons -->
-            <div class="flex flex-wrap justify-center gap-3 mb-10">
-                <button onclick="switchTab('emprendimiento')" id="tab-btn-emprendimiento" class="tab-btn active px-6 py-3 rounded-full text-sm font-bold transition-all shadow-sm flex items-center space-x-2 bg-midnight-800 text-white">
-                    <i class="fa-solid fa-lightbulb"></i>
-                    <span>Emprendimiento Social y Climático</span>
-                </button>
-                <button onclick="switchTab('educacion')" id="tab-btn-educacion" class="tab-btn px-6 py-3 rounded-full text-sm font-bold transition-all shadow-sm flex items-center space-x-2 bg-white text-slate-700 hover:bg-slate-100">
-                    <i class="fa-solid fa-book-open"></i>
-                    <span>Educación & Bienestar Social</span>
-                </button>
-                <button onclick="switchTab('ambiente')" id="tab-btn-ambiente" class="tab-btn px-6 py-3 rounded-full text-sm font-bold transition-all shadow-sm flex items-center space-x-2 bg-white text-slate-700 hover:bg-slate-100">
-                    <i class="fa-solid fa-leaf"></i>
-                    <span>Medio Ambiente & Restauración</span>
-                </button>
-            </div>
-
-            <!-- Tab Contents -->
-            <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200/80 shadow-md">
-                
-                <!-- Tab 1: Emprendimiento -->
-                <div id="tab-content-emprendimiento" class="tab-content block space-y-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <span class="px-3 py-1 bg-warm-100 text-warm-500 font-bold text-xs rounded-full uppercase">Aceleración & Liderazgo</span>
-                            <h3 class="text-2xl font-bold font-display text-midnight-900 mt-3">Programa EcoTech & Compromiso Bogotá</h3>
-                            <p class="text-slate-600 mt-3 leading-relaxed">
-                                Impulsamos startups de tecnología verde y fortalecemos redes comunitarias para escalar soluciones productivas con alto impacto ambiental y social.
-                            </p>
-                            
-                            <div class="grid grid-cols-2 gap-4 mt-6">
-                                <div class="p-4 bg-midnight-50 rounded-2xl border border-midnight-200/50">
-                                    <p class="text-2xl font-extrabold text-midnight-800 font-display">51 Startups</p>
-                                    <p class="text-xs text-slate-500 font-medium mt-1">Aceleradas con Impact Hub</p>
-                                </div>
-                                <div class="p-4 bg-midnight-50 rounded-2xl border border-midnight-200/50">
-                                    <p class="text-2xl font-extrabold text-midnight-800 font-display">+150</p>
-                                    <p class="text-xs text-slate-500 font-medium mt-1">Emprendimientos en Bogotá</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="space-y-4">
-                            <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                                <h4 class="font-bold text-midnight-900 text-base"><i class="fa-solid fa-rocket text-warm-500 mr-2"></i> EcoTech (Segunda Edición)</h4>
-                                <p class="text-sm text-slate-600 mt-1">158 horas de formación grupal y 153 mentorías personalizadas en finanzas, estrategia y talento humano.</p>
-                            </div>
-                            <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                                <h4 class="font-bold text-midnight-900 text-base"><i class="fa-solid fa-users text-midnight-800 mr-2"></i> Compromiso Bogotá</h4>
-                                <p class="text-sm text-slate-600 mt-1">Capacitaciones a 110 líderes territoriales y +2.500 conexiones de valor comercial y laboral.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tab 2: Educación -->
-                <div id="tab-content-educacion" class="tab-content hidden space-y-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <span class="px-3 py-1 bg-midnight-200 text-midnight-900 font-bold text-xs rounded-full uppercase">Formación & Inclusión</span>
-                            <h3 class="text-2xl font-bold font-display text-midnight-900 mt-3">Becas STEM, Finanzas Contigo & Primera Infancia</h3>
-                            <p class="text-slate-600 mt-3 leading-relaxed">
-                                Formamos talento para el futuro mediante becas de educación superior y llevamos educación financiera a todos los rincones del país.
-                            </p>
-
-                            <div class="grid grid-cols-2 gap-4 mt-6">
-                                <div class="p-4 bg-midnight-50 rounded-2xl border border-midnight-200/50">
-                                    <p class="text-2xl font-extrabold text-midnight-800 font-display">150 Becarios</p>
-                                    <p class="text-xs text-slate-500 font-medium mt-1">Programa Juan María Robledo</p>
-                                </div>
-                                <div class="p-4 bg-midnight-50 rounded-2xl border border-midnight-200/50">
-                                    <p class="text-2xl font-extrabold text-midnight-800 font-display">9.424</p>
-                                    <p class="text-xs text-slate-500 font-medium mt-1">Impactados en Aula Móvil</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="space-y-4">
-                            <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                                <h4 class="font-bold text-midnight-900 text-base"><i class="fa-solid fa-graduation-cap text-midnight-800 mr-2"></i> Becas Juan María Robledo</h4>
-                                <p class="text-sm text-slate-600 mt-1">Apoyo económico a estudiantes de carreras STEM en 10 universidades públicas. 58% mujeres.</p>
-                            </div>
-                            <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                                <h4 class="font-bold text-midnight-900 text-base"><i class="fa-solid fa-bus text-nature-600 mr-2"></i> Aula Móvil "Finanzas Contigo"</h4>
-                                <p class="text-sm text-slate-600 mt-1">Recorrió 49 municipios en 10 departamentos. Reconocida con el Premio Flor Ángela Gómez de Asobancaria.</p>
-                            </div>
-                            <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                                <h4 class="font-bold text-midnight-900 text-base"><i class="fa-solid fa-child text-warm-500 mr-2"></i> Alianza Fundación Ábacos</h4>
-                                <p class="text-sm text-slate-600 mt-1">Modelo pedagógico de educación económica para niños de 3 a 5 años y sus familias.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tab 3: Ambiente -->
-                <div id="tab-content-ambiente" class="tab-content hidden space-y-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <span class="px-3 py-1 bg-nature-100 text-nature-600 font-bold text-xs rounded-full uppercase">Acción Climática</span>
-                            <h3 class="text-2xl font-bold font-display text-midnight-900 mt-3">Restauración Ecológica & Tarjeta Débito Amazonía</h3>
-                            <p class="text-slate-600 mt-3 leading-relaxed">
-                                Unimos la bancarización responsable con la reforestación activa en el Amazonas y la siembra de mangles en el Caribe colombiano.
-                            </p>
-
-                            <div class="grid grid-cols-2 gap-4 mt-6">
-                                <div class="p-4 bg-nature-100/50 rounded-2xl border border-nature-100">
-                                    <p class="text-2xl font-extrabold text-nature-600 font-display">+118.000</p>
-                                    <p class="text-xs text-slate-500 font-medium mt-1">Árboles Nativos Sembrados</p>
-                                </div>
-                                <div class="p-4 bg-nature-100/50 rounded-2xl border border-nature-100">
-                                    <p class="text-2xl font-extrabold text-nature-600 font-display">75.000 Ton</p>
-                                    <p class="text-xs text-slate-500 font-medium mt-1">CO2 Capturadas Estimadas</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="space-y-4">
-                            <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                                <h4 class="font-bold text-midnight-900 text-base"><i class="fa-solid fa-credit-card text-midnight-800 mr-2"></i> Tarjeta Débito Amazonía</h4>
-                                <p class="text-sm text-slate-600 mt-1">28.000 tarjetas activas. El 1% de las compras financiaron la siembra directa de árboles y mangles.</p>
-                            </div>
-                            <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                                <h4 class="font-bold text-midnight-900 text-base"><i class="fa-solid fa-tree text-nature-600 mr-2"></i> Impacto Comunitario</h4>
-                                <p class="text-sm text-slate-600 mt-1">Generación de ingresos para +500 familias indígenas y pesqueras en Vaupés, Guainía y Bolívar.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. SIMULADOR INTERACTIVO DE DONACIÓN / CALCULADORA DE IMPACTO -->
-    <section id="simulador" class="py-20 bg-white">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gradient-to-br from-midnight-900 to-midnight-800 text-white rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden">
-                <div class="relative z-10">
-                    <div class="text-center max-w-2xl mx-auto mb-10">
-                        <span class="px-4 py-1.5 bg-white/10 rounded-full text-brand-yellow font-bold text-xs uppercase tracking-wider backdrop-blur-md">Simulador de Impacto</span>
-                        <h2 class="text-3xl sm:text-4xl font-extrabold font-display mt-3">Calcula el alcance de tu aporte</h2>
-                        <p class="text-midnight-200 text-sm sm:text-base mt-2">Mueve la barra interactiva para descubrir la transformación real que genera tu contribución.</p>
-                    </div>
-
-                    <!-- Slider Container -->
-                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/10 space-y-8">
-                        <div>
-                            <div class="flex justify-between items-center mb-4">
-                                <span class="text-sm font-semibold text-midnight-200">Monto Aportado:</span>
-                                <span id="donation-amount-display" class="text-3xl font-extrabold font-display text-brand-yellow">$ 100.000 COP</span>
-                            </div>
-                            <input type="range" id="donation-range" min="20000" max="500000" step="10000" value="100000" class="w-full h-3 bg-midnight-900/60 rounded-lg appearance-none cursor-pointer accent-brand-yellow">
-                            <div class="flex justify-between text-xs text-midnight-200 mt-2 font-medium">
-                                <span>$ 20.000 COP</span>
-                                <span>$ 250.000 COP</span>
-                                <span>$ 500.000 COP</span>
-                            </div>
-                        </div>
-
-                        <!-- Dynamic Results Grid -->
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/10 text-center">
-                            <div class="p-4 bg-white/5 rounded-xl border border-white/5">
-                                <i class="fa-solid fa-tree text-nature-500 text-2xl mb-2"></i>
-                                <p id="trees-calc" class="text-2xl font-bold font-display text-white">10</p>
-                                <p class="text-xs text-midnight-200 mt-1">Árboles nativos sembrados</p>
-                            </div>
-                            <div class="p-4 bg-white/5 rounded-xl border border-white/5">
-                                <i class="fa-solid fa-graduation-cap text-brand-yellow text-2xl mb-2"></i>
-                                <p id="kids-calc" class="text-2xl font-bold font-display text-white">4</p>
-                                <p class="text-xs text-midnight-200 mt-1">Niños capacitados en finanzas</p>
-                            </div>
-                            <div class="p-4 bg-white/5 rounded-xl border border-white/5">
-                                <i class="fa-solid fa-book text-warm-500 text-2xl mb-2"></i>
-                                <p id="days-calc" class="text-2xl font-bold font-display text-white">15</p>
-                                <p class="text-xs text-midnight-200 mt-1">Días de auxilio educativo</p>
-                            </div>
-                        </div>
-
-                        <div class="text-center pt-2">
-                            <button onclick="openModalWithAmount()" class="px-8 py-3.5 rounded-full font-bold text-midnight-900 bg-brand-yellow hover:bg-yellow-400 shadow-md transition-all">
-                                Donar este Monto Ahora
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. HISTORIAS REALES DE IMPACTO -->
-    <section id="historias" class="py-20 bg-midnight-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-xs uppercase font-extrabold tracking-widest text-midnight-800">Testimonios Territoriales</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-midnight-900 mt-2">Historias Reales de Impacto</h2>
-                <p class="text-slate-600 mt-2">Conoce a los protagonistas detrás de los resultados en las regiones.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Story Card 1 -->
-                <div class="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-shadow flex flex-col">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&q=80" alt="Ambalema Tolima" class="w-full h-full object-cover">
-                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-midnight-900 text-xs font-bold px-3 py-1 rounded-full">Ambalema, Tolima</span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                        <div>
-                            <h3 class="font-bold text-xl font-display text-midnight-900">Educación Financiera y Turismo Sostenible</h3>
-                            <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-                                Se capacitaron 447 personas entre niños y microempresarios locales, fortaleciendo la economía comunitaria y promoviendo el turismo responsable en el municipio.
-                            </p>
-                        </div>
-                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-xs font-semibold text-midnight-800"><i class="fa-solid fa-users mr-1"></i> 447 Beneficiarios</span>
-                            <span class="text-xs text-slate-400">Año 2025</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Story Card 2 -->
-                <div class="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-shadow flex flex-col">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Becaria Talento Digital" class="w-full h-full object-cover">
-                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-midnight-900 text-xs font-bold px-3 py-1 rounded-full">Talento STEM</span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                        <div>
-                            <h3 class="font-bold text-xl font-display text-midnight-900">Becaria de Talento Digital Juan María Robledo</h3>
-                            <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-                                Apoyo a estudiantes de ingeniería y ciencias de la computación. Más de 46 becarios realizaron sus prácticas profesionales directamente en la organización.
-                            </p>
-                        </div>
-                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-xs font-semibold text-midnight-800"><i class="fa-solid fa-graduation-cap mr-1"></i> 58% Mujeres</span>
-                            <span class="text-xs text-slate-400">Año 2025</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Story Card 3 -->
-                <div class="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-shadow flex flex-col">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=800&q=80" alt="Comunidades Indígenas" class="w-full h-full object-cover">
-                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-nature-600 font-bold text-xs px-3 py-1 rounded-full">Vaupés & Guainía</span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                        <div>
-                            <h3 class="font-bold text-xl font-display text-midnight-900">Familias Guardianas de la Amazonía</h3>
-                            <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-                                Creación de empleo para más de 300 personas en comunidades indígenas locales, asegurando ingresos estables mediante la siembra de frutales y conservación de bosques.
-                            </p>
-                        </div>
-                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-xs font-semibold text-nature-600"><i class="fa-solid fa-leaf mr-1"></i> +500 Familias</span>
-                            <span class="text-xs text-slate-400">Año 2025</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 7. SECCIÓN DE TRANSPARENCIA & DESCARGA DE INFORME -->
-    <section id="transparencia" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-midnight-900 rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden shadow-2xl">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-                    <div class="lg:col-span-8 space-y-4">
-                        <span class="px-3 py-1 bg-white/10 rounded-full text-brand-yellow font-bold text-xs uppercase tracking-wider">Rendición de Cuentas</span>
-                        <h2 class="text-3xl sm:text-4xl font-extrabold font-display">Informe de Gestión y Sostenibilidad 2025</h2>
-                        <p class="text-midnight-200 text-sm sm:text-base leading-relaxed max-w-2xl">
-                            Conoce detalladamente nuestros indicadores financieros, proyectos territoriales y la ejecucion presupuestal bajo los más altos estándares de gobernanza y transparencia.
-                        </p>
-                    </div>
-                    <div class="lg:col-span-4 text-center lg:text-right">
-                        <a href="#" onclick="alert('Iniciando descarga del Informe de Gestión y Sostenibilidad 2025 (PDF)...'); return false;" class="inline-flex items-center px-8 py-4 rounded-full font-bold text-midnight-900 bg-brand-yellow hover:bg-yellow-400 shadow-xl transition-all transform hover:-translate-y-0.5">
-                            <i class="fa-solid fa-file-pdf mr-2 text-xl"></i> Descargar Informe (PDF)
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 8. FOOTER COMPLETO -->
-    <footer class="bg-midnight-900 text-white pt-16 pb-12 border-t border-midnight-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-midnight-800">
-                
-                <!-- Col 1: Brand Info -->
-                <div class="lg:col-span-2 space-y-4">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-midnight-900 font-bold">
-                            <span class="text-brand-yellow font-display">B</span>
-                        </div>
-                        <span class="text-xl font-bold font-display tracking-tight">Fundación Banco de Bogotá</span>
-                    </div>
-                    <p class="text-xs text-midnight-200 leading-relaxed max-w-sm">
-                        Entidad sin ánimo de lucro dedicada a promover el desarrollo sostenible, el emprendimiento y el bienestar integral de las comunidades en Colombia.
-                    </p>
-                    <p class="text-xs text-midnight-200">
-                        <strong>NIT:</strong> 860.024.437-9<br>
-                        <strong>Domicilio:</strong> Calle 36 No. 7-47, Piso 15, Bogotá D.C.
-                    </p>
-                </div>
-
-                <!-- Col 2: Navigation Links -->
-                <div>
-                    <h4 class="text-sm font-bold uppercase tracking-wider text-brand-yellow mb-4">Navegación</h4>
-                    <ul class="space-y-2 text-xs text-midnight-200">
-                        <li><a href="#nosotros" class="hover:text-white transition-colors">Nosotros</a></li>
-                        <li><a href="#frentes" class="hover:text-white transition-colors">Frentes Estratégicos</a></li>
-                        <li><a href="#simulador" class="hover:text-white transition-colors">Calculadora de Impacto</a></li>
-                        <li><a href="#historias" class="hover:text-white transition-colors">Historias de Éxito</a></li>
-                    </ul>
-                </div>
-
-                <!-- Col 3: Strategic Programs -->
-                <div>
-                    <h4 class="text-sm font-bold uppercase tracking-wider text-brand-yellow mb-4">Programas</h4>
-                    <ul class="space-y-2 text-xs text-midnight-200">
-                        <li><a href="#frentes" class="hover:text-white transition-colors">EcoTech & Impact Hub</a></li>
-                        <li><a href="#frentes" class="hover:text-white transition-colors">Becas Juan María Robledo</a></li>
-                        <li><a href="#frentes" class="hover:text-white transition-colors">Finanzas Contigo (Aula Móvil)</a></li>
-                        <li><a href="#frentes" class="hover:text-white transition-colors">Tarjeta Débito Amazonía</a></li>
-                    </ul>
-                </div>
-
-                <!-- Col 4: Social & Strategic Alliance -->
-                <div>
-                    <h4 class="text-sm font-bold uppercase tracking-wider text-brand-yellow mb-4">Red de Aliados</h4>
-                    <p class="text-xs text-midnight-200 leading-relaxed mb-4">
-                        Miembro del Grupo Aval y articulados con organizaciones de alto impacto territorial.
-                    </p>
-                    <div class="flex space-x-3 text-lg text-midnight-200">
-                        <a href="#" class="hover:text-brand-yellow transition-colors"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#" class="hover:text-brand-yellow transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="hover:text-brand-yellow transition-colors"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="#" class="hover:text-brand-yellow transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Footer Bottom -->
-            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-midnight-200">
-                <p>&copy; 2026 Fundación Banco de Bogotá. Todos los derechos reservados.</p>
-                <div class="flex space-x-6 mt-4 sm:mt-0">
-                    <a href="#" class="hover:text-white">Términos y Condiciones</a>
-                    <a href="#" class="hover:text-white">Política de Privacidad</a>
-                    <a href="#" class="hover:text-white">Canal Ético</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- 9. MODAL INTERACTIVO DE DONACIÓN -->
-    <div id="donation-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
-        <!-- Backdrop -->
-        <div onclick="toggleModal(false)" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"></div>
-
-        <!-- Modal Box -->
-        <div class="flex items-center justify-center min-h-screen p-4 text-center sm:p-0">
-            <div class="relative bg-white rounded-3xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full border border-slate-100 p-6 sm:p-8 space-y-6 z-10">
-                
-                <div class="flex justify-between items-center pb-4 border-b border-slate-100">
-                    <div class="flex items-center space-x-2">
-                        <div class="w-8 h-8 rounded-lg bg-midnight-200 flex items-center justify-center text-midnight-800">
-                            <i class="fa-solid fa-heart text-sm"></i>
-                        </div>
-                        <h3 class="text-xl font-bold font-display text-midnight-900">Realizar una Donación</h3>
-                    </div>
-                    <button onclick="toggleModal(false)" class="text-slate-400 hover:text-slate-600 text-xl font-bold p-1">
-                        &times;
-                    </button>
-                </div>
-
-                <form onsubmit="handleDonation(event)" class="space-y-4">
-                    <!-- Target Program -->
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Programa Destino</label>
-                        <select id="modal-program" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-midnight-800 focus:outline-none bg-slate-50">
-                            <option value="todos">Fondo General de Impacto Social</option>
-                            <option value="amazonia">Reforestación Amazonía y Mangles</option>
-                            <option value="becas">Becas Universitarias STEM</option>
-                            <option value="ecotech">Aceleración EcoTech Startups</option>
-                        </select>
-                    </div>
-
-                    <!-- Amount Selection -->
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Monto a Aportar (COP)</label>
-                        <input type="number" id="modal-amount" value="100000" min="10000" step="5000" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-base font-bold text-midnight-900 focus:ring-2 focus:ring-midnight-800 focus:outline-none bg-slate-50">
-                    </div>
-
-                    <!-- Payment Gateway Option -->
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Medio de Pago</label>
-                        <div class="grid grid-cols-3 gap-3">
-                            <label class="border border-slate-200 rounded-xl p-3 text-center cursor-pointer hover:bg-slate-50 flex flex-col items-center justify-center space-y-1">
-                                <input type="radio" name="payment" value="pse" checked class="accent-midnight-800">
-                                <span class="text-xs font-bold text-slate-700">PSE</span>
-                            </label>
-                            <label class="border border-slate-200 rounded-xl p-3 text-center cursor-pointer hover:bg-slate-50 flex flex-col items-center justify-center space-y-1">
-                                <input type="radio" name="payment" value="card" class="accent-midnight-800">
-                                <span class="text-xs font-bold text-slate-700">Tarjeta</span>
-                            </label>
-                            <label class="border border-slate-200 rounded-xl p-3 text-center cursor-pointer hover:bg-slate-50 flex flex-col items-center justify-center space-y-1">
-                                <input type="radio" name="payment" value="aval" class="accent-midnight-800">
-                                <span class="text-xs font-bold text-slate-700">Puntos Aval</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Personal info -->
-                    <div class="space-y-3 pt-2">
-                        <input type="text" placeholder="Nombre completo" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-midnight-800">
-                        <input type="email" placeholder="Correo electrónico" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-midnight-800">
-                    </div>
-
-                    <button type="submit" class="w-full py-4 rounded-xl font-bold text-white bg-midnight-800 hover:bg-midnight-900 shadow-lg transition-all text-center text-sm mt-4">
-                        Completar Donación
-                    </button>
-                </form>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- JAVASCRIPT LOGIC -->
-    <script>
-        // Tab switching logic
-        function switchTab(tabId) {
-            // Hide all contents
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.classList.add('hidden');
-                content.classList.remove('block');
-            });
-            // Reset button styles
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('bg-midnight-800', 'text-white');
-                btn.classList.add('bg-white', 'text-slate-700');
-            });
-
-            // Show selected content
-            const activeContent = document.getElementById(`tab-content-${tabId}`);
-            if (activeContent) {
-                activeContent.classList.remove('hidden');
-                activeContent.classList.add('block');
-            }
-
-            // Highlight selected button
-            const activeBtn = document.getElementById(`tab-btn-${tabId}`);
-            if (activeBtn) {
-                activeBtn.classList.remove('bg-white', 'text-slate-700');
-                activeBtn.classList.add('bg-midnight-800', 'text-white');
-            }
-        }
-
-        // Calculator logic
-        const rangeInput = document.getElementById('donation-range');
-        const amountDisplay = document.getElementById('donation-amount-display');
-        const treesCalc = document.getElementById('trees-calc');
-        const kidsCalc = document.getElementById('kids-calc');
-        const daysCalc = document.getElementById('days-calc');
-
-        if (rangeInput) {
-            rangeInput.addEventListener('input', (e) => {
-                const val = parseInt(e.target.value);
-                
-                // Format Currency
-                amountDisplay.innerText = `$ ${val.toLocaleString('es-CO')} COP`;
-
-                // Real-time calculations
-                const trees = Math.floor(val / 10000);
-                const kids = Math.floor(val / 25000);
-                const days = Math.floor(val / 6500);
-
-                treesCalc.innerText = trees;
-                kidsCalc.innerText = kids;
-                daysCalc.innerText = days;
-            });
-        }
-
-        // Modal toggle logic
-        function toggleModal(show) {
-            const modal = document.getElementById('donation-modal');
-            if (show) {
-                modal.classList.remove('hidden');
-            } else {
-                modal.classList.add('hidden');
-            }
-        }
-
-        function openModalWithAmount() {
-            const currentAmount = rangeInput.value;
-            document.getElementById('modal-amount').value = currentAmount;
-            toggleModal(true);
-        }
-
-        function handleDonation(e) {
-            e.preventDefault();
-            alert('¡Gracias por tu apoyo! Tu donación ha sido procesada de manera exitosa.');
-            toggleModal(false);
-        }
-
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-    </script>
-</body>
-</html>
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+// hero
+const sl=$$('.hero .sl'),dots=$('#dots');let hi=0,ht;
+sl.forEach((_,i)=>{const b=document.createElement('button');b.setAttribute('aria-label','Imagen '+(i+1));b.onclick=()=>{go(i);reset()};dots.append(b)});
+function go(i){hi=i;sl.forEach((s,j)=>s.classList.toggle('on',j==i));$$('button',dots).forEach((b,j)=>b.classList.toggle('on',j==i))}
+function reset(){clearInterval(ht);if(!matchMedia('(prefers-reduced-motion:reduce)').matches)ht=setInterval(()=>go((hi+1)%sl.length),6000)}go(0);reset();
+// kpis
+const fmt=(n)=>n.toLocaleString('es-CO');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);const el=e.target,n=+el.dataset.n,p=el.dataset.p||'',s=el.dataset.s||'',t0=performance.now();
+(function f(t){const k=Math.min(1,(t-t0)/1400),v=Math.round(n*(1-Math.pow(1-k,3)));el.textContent=p+(s?fmt(v).replace(/\./g,'.'):fmt(v))+s;if(k<1)requestAnimationFrame(f)})(t0)}),{threshold:.5});
+$$('[data-n]').forEach(e=>io.observe(e));
+// fronts
+const F=[{k:'Planeta',c:'var(--b8)',img:'images/caja-bosque.jpg',cap:'Restauración ecológica',t:'Orgullosamente cambiando el planeta',d:'Medio ambiente y restauración: ecosistemas de la Amazonía y el Caribe recuperados junto a las comunidades.',p:[['Tarjeta Débito Amazonía','Cada uso de la tarjeta contribuye a la restauración de la Amazonía.'],['Experiencias en Moyas','Jornadas ambientales con voluntarios del Banco en territorio.'],['Restauración','Siembra de árboles y mangles junto a comunidades locales.']],u:'/cambiando-el-planeta',cta:'Ver proyectos ambientales y restauración'},
+{k:'Educación',c:'var(--y)',img:'',cap:'Desarrollo social y talento',t:'Orgullosamente cambiando la educación',d:'Becas STEM, música, infraestructura educativa y finanzas para nuevas oportunidades.',p:[['Becas Juan María Robledo','Becas para jóvenes en carreras STEM.'],['Armonía en Progreso','Formación musical en La Boquilla y Mompox, con Fundación Salvi.'],['Aula Móvil “Finanzas Contigo”','Educación financiera que llega a los colegios.']],u:'/cambiando-la-educacion',cta:'Ver iniciativas de educación'},
+{k:'Vidas',c:'var(--r)',img:'images/voluntarias-banco-alimentos.jpg',cap:'Emprendimiento y comunidad',t:'Orgullosamente cambiando vidas',d:'Inclusión social y emprendimiento: economías locales más fuertes y startups sostenibles.',p:[['Startups EcoTech','Aceleración de startups sostenibles con Impact Hub.'],['Inclusión en Suba','Fortalecimiento de la economía local con Compromiso Bogotá.'],['Emprendimiento','Acompañamiento a emprendedores y mentorías.']],u:'/cambiando-vidas',cta:'Ver programas de emprendimiento'}];
+const tabs=$('#tabs'),pb=$('#pb'),ph=$('#fph'),hubs=$('#hubs');let cur=0;
+F.forEach((f,i)=>{const b=document.createElement('button');b.role='tab';b.textContent=f.k;b.onclick=()=>show(i);tabs.append(b);
+hubs.insertAdjacentHTML('beforeend',`<a class="hub" href="#frentes" data-i="${i}" style="border-top:5px solid ${f.c}"><code>${f.u}</code><b>${f.t.replace('Orgullosamente c','C')}</b><span style="color:var(--mut);font-size:15px">${f.p.map(x=>x[0]).join(' · ')}</span></a>`)});
+$$('.hub',hubs).forEach(h=>h.onclick=()=>show(+h.dataset.i));$$('[data-go]').forEach(a=>a.onclick=()=>show(+a.dataset.go));
+function show(i){cur=i;const f=F[i];$$('button',tabs).forEach((b,j)=>b.setAttribute('aria-selected',j==i));
+ph.style.backgroundImage=f.img?`url(${f.img})`:'linear-gradient(150deg,#0043A9,#00317E)';$('#fcap').textContent=f.cap+(f.img?'':' · Foto pendiente');
+pb.innerHTML=`<h3>${f.t}</h3><p>${f.d}</p><div class="chips">${f.p.map((x,j)=>`<button data-j="${j}" class="${j?'':'on'}">${x[0]}</button>`).join('')}</div><div class="det" aria-live="polite">${f.p[0][1]}</div><a class="btn p" href="#">${f.cta} →</a>`;
+$$('.chips button',pb).forEach(b=>b.onclick=()=>{$$('.chips button',pb).forEach(x=>x.classList.remove('on'));b.classList.add('on');$('.det',pb).textContent=f.p[+b.dataset.j][1]})}show(0);
+// news filter
+$$('#fil button').forEach(b=>b.onclick=()=>{$$('#fil button').forEach(x=>x.classList.remove('on'));b.classList.add('on');$$('.nw').forEach(n=>n.hidden=b.dataset.f!='all'&&n.dataset.c!=b.dataset.f)});
+// allies
+const A=['Impact Hub','Fundación Salvi','Fundación Juanfe','País de Raíz','Minuto de Dios','Aprender a Quererte','Compromiso Bogotá','Asobancaria'];
+$('#mq').innerHTML=[...A,...A].map(a=>`<span>${a}</span>`).join('');
+</script></body></html>

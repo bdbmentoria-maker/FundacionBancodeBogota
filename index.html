@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundación Banco de Bogotá - Sembrando oportunidades, transformando territorios</title>
+    <!-- Google Fonts: Urbanist & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Urbanist:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        midnight: {
+                            900: '#00317E',
+                            800: '#0043A9',
+                            200: '#D4E5F8',
+                            50:  '#F0F6FD',
+                        },
+                        nature: {
+                            600: '#059669',
+                            500: '#10B981',
+                            100: '#D1FAE5',
+                        },
+                        warm: {
+                            500: '#F59E0B',
+                            100: '#FEF3C7',
+                        },
+                        brand: {
+                            yellow: '#FFBF00',
+                            red: '#EE2E2E'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Urbanist', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        '4xl': '2rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .glass-dark {
+            background: rgba(0, 49, 126, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="font-sans bg-midnight-50 text-slate-800 antialiased selection:bg-midnight-800 selection:text-white">
+
+    <!-- 1. HEADER / NAVEGACIÓN STICKY -->
+    <header class="sticky top-0 z-40 w-full glass-panel border-b border-midnight-200/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo Oficial Fundación -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="relative w-10 h-10 flex items-center justify-center bg-midnight-800 rounded-xl text-white font-black text-xl shadow-md group-hover:scale-105 transition-transform">
+                        <span class="text-brand-yellow font-display">B</span>
+                        <div class="absolute -top-1 -right-1 w-3 h-3 bg-brand-red rounded-full"></div>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xs uppercase tracking-widest text-slate-500 font-semibold leading-none">Fundación</span>
+                        <span class="text-lg font-extrabold font-display text-midnight-900 tracking-tight leading-tight">Banco de Bogotá</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#nosotros" class="text-sm font-medium text-slate-700 hover:text-midnight-800 transition-colors">Nosotros</a>
+                    <a href="#frentes" class="text-sm font-medium text-slate-700 hover:text-midnight-800 transition-colors">Estrategia & Frentes</a>
+                    <a href="#simulador" class="text-sm font-medium text-slate-700 hover:text-midnight-800 transition-colors">Calculadora Impacto</a>
+                    <a href="#historias" class="text-sm font-medium text-slate-700 hover:text-midnight-800 transition-colors">Historias</a>
+                    <a href="#transparencia" class="text-sm font-medium text-slate-700 hover:text-midnight-800 transition-colors">Informe 2025</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button onclick="toggleModal(true)" class="inline-flex items-center justify-center px-6 py-2.5 rounded-full font-semibold text-sm text-white bg-midnight-800 hover:bg-midnight-900 shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+                        <i class="fa-solid font-bold fa-heart mr-2 text-brand-yellow"></i> Dona Ahora
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-slate-700 hover:text-midnight-800 p-2 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#nosotros" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-slate-700 hover:text-midnight-800">Nosotros</a>
+            <a href="#frentes" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-slate-700 hover:text-midnight-800">Estrategia & Frentes</a>
+            <a href="#simulador" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-slate-700 hover:text-midnight-800">Calculadora Impacto</a>
+            <a href="#historias" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-slate-700 hover:text-midnight-800">Historias</a>
+            <a href="#transparencia" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-slate-700 hover:text-midnight-800">Informe 2025</a>
+            <button onclick="toggleModal(true); toggleMobileMenu();" class="w-full mt-4 py-3 rounded-xl font-semibold text-white bg-midnight-800 text-center">
+                <i class="fa-solid fa-heart mr-2 text-brand-yellow"></i> Dona Ahora
+            </button>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-midnight-200/60 text-midnight-900 text-xs font-bold tracking-wide uppercase">
+                        <span class="w-2 h-2 rounded-full bg-nature-500 animate-pulse"></span>
+                        <span>Brazo Filantrópico y Social del Banco de Bogotá</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display text-midnight-900 leading-tight tracking-tight">
+                        Sembrando oportunidades, <span class="text-midnight-800 underline decoration-brand-yellow decoration-4 underline-offset-4">transformando territorios.</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Conectamos conocimientos, recursos y capacidades para impulsar el desarrollo sostenible, la educación de calidad y la regeneración ambiental en las regiones de Colombia.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
+                        <a href="#frentes" class="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-midnight-800 hover:bg-midnight-900 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center">
+                            Explorar Frentes
+                        </a>
+                        <button onclick="toggleModal(true)" class="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-midnight-900 bg-white border border-midnight-200 hover:bg-midnight-50 shadow-sm transition-all text-center">
+                            Sumarte a la Causa
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hero Visual & Floating Cards -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl bg-midnight-900 relative">
+                            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1000&q=80" alt="Reforestación y sostenibilidad" class="w-full h-full object-cover opacity-90">
+                            <div class="absolute inset-0 bg-gradient-to-t from-midnight-900/80 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 right-6 text-white">
+                                <span class="text-xs font-semibold uppercase tracking-wider text-nature-100 bg-nature-600/60 px-3 py-1 rounded-full backdrop-blur-md">Amazonía & Caribe</span>
+                                <h3 class="text-xl font-bold mt-2 font-display">Restauración Ecológica</h3>
+                            </div>
+                        </div>
+
+                        <!-- Floating Card 1: Becas -->
+                        <div class="absolute -top-6 -left-6 sm:-left-8 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-100 max-w-[220px] hidden sm:block">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 rounded-xl bg-midnight-200 flex items-center justify-center text-midnight-800">
+                                    <i class="fa-solid fa-graduation-cap text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-500 font-medium">Becas Juan María R.</p>
+                                    <p class="text-sm font-bold text-midnight-900">150 Jóvenes STEM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Card 2: EcoTech -->
+                        <div class="absolute -bottom-6 -right-6 sm:-right-8 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-100 max-w-[220px] hidden sm:block">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 rounded-xl bg-nature-100 flex items-center justify-center text-nature-600">
+                                    <i class="fa-solid fa-seedling text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-500 font-medium">Programa EcoTech</p>
+                                    <p class="text-sm font-bold text-midnight-900">51 Startups Verdes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Metrics Bar -->
+            <div class="mt-16 pt-8 border-t border-slate-200/80 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                <div class="p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-slate-100 shadow-sm">
+                    <p class="text-3xl sm:text-4xl font-extrabold font-display text-midnight-900">$1.574M+</p>
+                    <p class="text-sm font-medium text-slate-600 mt-1">Inversión Ejecutada 2025</p>
+                </div>
+                <div class="p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-slate-100 shadow-sm">
+                    <p class="text-3xl sm:text-4xl font-extrabold font-display text-nature-600">+118.000</p>
+                    <p class="text-sm font-medium text-slate-600 mt-1">Árboles y Mangles Sembrados</p>
+                </div>
+                <div class="p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-slate-100 shadow-sm">
+                    <p class="text-3xl sm:text-4xl font-extrabold font-display text-midnight-800">+10.000</p>
+                    <p class="text-sm font-medium text-slate-600 mt-1">Personas y Familias Impactadas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ACERCA DE & MENSAJE INSTITUCIONAL -->
+    <section id="nosotros" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-midnight-50 rounded-3xl p-8 sm:p-12 lg:p-16 border border-midnight-200/60 shadow-sm">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Perfil Directora -->
+                    <div class="lg:col-span-4 text-center">
+                        <div class="relative inline-block">
+                            <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden mx-auto shadow-xl ring-4 ring-white border-2 border-midnight-200">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Maria del Mar Vélez Mejía" class="w-full h-full object-cover">
+                            </div>
+                            <div class="absolute bottom-2 right-4 bg-midnight-800 text-white p-3 rounded-full shadow-lg">
+                                <i class="fa-solid fa-quote-right text-sm"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold font-display text-midnight-900 mt-6">Maria del Mar Vélez Mejía</h3>
+                        <p class="text-sm font-medium text-midnight-800">Directora Fundación Banco de Bogotá</p>
+                    </div>
+
+                    <!-- Cita & Pilares ESG -->
+                    <div class="lg:col-span-8 space-y-6">
+                        <h2 class="text-2xl sm:text-3xl font-extrabold font-display text-midnight-900">
+                            "El desarrollo de un país se construye cuando las oportunidades llegan a los territorios donde más se necesitan."
+                        </h2>
+                        <p class="text-slate-600 leading-relaxed text-base sm:text-lg">
+                            Bajo esta convicción, conectamos capacidades, conocimiento y recursos para impulsar el progreso comunitario y generar transformaciones reales e inclusivas en Colombia.
+                        </p>
+
+                        <!-- ESG Badges -->
+                        <div class="pt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="flex items-center space-x-3 p-3 bg-white rounded-xl border border-slate-200">
+                                <div class="w-8 h-8 rounded-lg bg-nature-100 flex items-center justify-center text-nature-600 font-bold text-sm">A</div>
+                                <span class="text-xs font-bold text-slate-700 uppercase tracking-wider">Ambiental</span>
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-white rounded-xl border border-slate-200">
+                                <div class="w-8 h-8 rounded-lg bg-midnight-200 flex items-center justify-center text-midnight-800 font-bold text-sm">S</div>
+                                <span class="text-xs font-bold text-slate-700 uppercase tracking-wider">Social</span>
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-white rounded-xl border border-slate-200">
+                                <div class="w-8 h-8 rounded-lg bg-warm-100 flex items-center justify-center text-warm-500 font-bold text-sm">G</div>
+                                <span class="text-xs font-bold text-slate-700 uppercase tracking-wider">Gobierno</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. NUESTROS 3 FRENTES ESTRATÉGICOS (TABS INTERACTIVAS) -->
+    <section id="frentes" class="py-20 bg-midnight-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs uppercase font-extrabold tracking-widest text-midnight-800">Estrategia de Impacto</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-midnight-900 mt-2">Nuestros 3 Frentes Estratégicos</h2>
+                <p class="text-slate-600 mt-3">Estructuramos nuestras acciones para abordar los retos más urgentes del país con soluciones de fondo y sostenibles.</p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <button onclick="switchTab('emprendimiento')" id="tab-btn-emprendimiento" class="tab-btn active px-6 py-3 rounded-full text-sm font-bold transition-all shadow-sm flex items-center space-x-2 bg-midnight-800 text-white">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <span>Emprendimiento Social y Climático</span>
+                </button>
+                <button onclick="switchTab('educacion')" id="tab-btn-educacion" class="tab-btn px-6 py-3 rounded-full text-sm font-bold transition-all shadow-sm flex items-center space-x-2 bg-white text-slate-700 hover:bg-slate-100">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>Educación & Bienestar Social</span>
+                </button>
+                <button onclick="switchTab('ambiente')" id="tab-btn-ambiente" class="tab-btn px-6 py-3 rounded-full text-sm font-bold transition-all shadow-sm flex items-center space-x-2 bg-white text-slate-700 hover:bg-slate-100">
+                    <i class="fa-solid fa-leaf"></i>
+                    <span>Medio Ambiente & Restauración</span>
+                </button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200/80 shadow-md">
+                
+                <!-- Tab 1: Emprendimiento -->
+                <div id="tab-content-emprendimiento" class="tab-content block space-y-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <span class="px-3 py-1 bg-warm-100 text-warm-500 font-bold text-xs rounded-full uppercase">Aceleración & Liderazgo</span>
+                            <h3 class="text-2xl font-bold font-display text-midnight-900 mt-3">Programa EcoTech & Compromiso Bogotá</h3>
+                            <p class="text-slate-600 mt-3 leading-relaxed">
+                                Impulsamos startups de tecnología verde y fortalecemos redes comunitarias para escalar soluciones productivas con alto impacto ambiental y social.
+                            </p>
+                            
+                            <div class="grid grid-cols-2 gap-4 mt-6">
+                                <div class="p-4 bg-midnight-50 rounded-2xl border border-midnight-200/50">
+                                    <p class="text-2xl font-extrabold text-midnight-800 font-display">51 Startups</p>
+                                    <p class="text-xs text-slate-500 font-medium mt-1">Aceleradas con Impact Hub</p>
+                                </div>
+                                <div class="p-4 bg-midnight-50 rounded-2xl border border-midnight-200/50">
+                                    <p class="text-2xl font-extrabold text-midnight-800 font-display">+150</p>
+                                    <p class="text-xs text-slate-500 font-medium mt-1">Emprendimientos en Bogotá</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
+                                <h4 class="font-bold text-midnight-900 text-base"><i class="fa-solid fa-rocket text-warm-500 mr-2"></i> EcoTech (Segunda Edición)</h4>
+                                <p class="text-sm text-slate-600 mt-1">158 horas de formación grupal y 153 mentorías personalizadas en finanzas, estrategia y talento humano.</p>
+                            </div>
+                            <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
+                                <h4 class="font-bold text-midnight-900 text-base"><i class="fa-solid fa-users text-midnight-800 mr-2"></i> Compromiso Bogotá</h4>
+                                <p class="text-sm text-slate-600 mt-1">Capacitaciones a 110 líderes territoriales y +2.500 conexiones de valor comercial y laboral.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Educación -->
+                <div id="tab-content-educacion" class="tab-content hidden space-y-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <span class="px-3 py-1 bg-midnight-200 text-midnight-900 font-bold text-xs rounded-full uppercase">Formación & Inclusión</span>
+                            <h3 class="text-2xl font-bold font-display text-midnight-900 mt-3">Becas STEM, Finanzas Contigo & Primera Infancia</h3>
+                            <p class="text-slate-600 mt-3 leading-relaxed">
+                                Formamos talento para el futuro mediante becas de educación superior y llevamos educación financiera a todos los rincones del país.
+                            </p>
+
+                            <div class="grid grid-cols-2 gap-4 mt-6">
+                                <div class="p-4 bg-midnight-50 rounded-2xl border border-midnight-200/50">
+                                    <p class="text-2xl font-extrabold text-midnight-800 font-display">150 Becarios</p>
+                                    <p class="text-xs text-slate-500 font-medium mt-1">Programa Juan María Robledo</p>
+                                </div>
+                                <div class="p-4 bg-midnight-50 rounded-2xl border border-midnight-200/50">
+                                    <p class="text-2xl font-extrabold text-midnight-800 font-display">9.424</p>
+                                    <p class="text-xs text-slate-500 font-medium mt-1">Impactados en Aula Móvil</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
+                                <h4 class="font-bold text-midnight-900 text-base"><i class="fa-solid fa-graduation-cap text-midnight-800 mr-2"></i> Becas Juan María Robledo</h4>
+                                <p class="text-sm text-slate-600 mt-1">Apoyo económico a estudiantes de carreras STEM en 10 universidades públicas. 58% mujeres.</p>
+                            </div>
+                            <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
+                                <h4 class="font-bold text-midnight-900 text-base"><i class="fa-solid fa-bus text-nature-600 mr-2"></i> Aula Móvil "Finanzas Contigo"</h4>
+                                <p class="text-sm text-slate-600 mt-1">Recorrió 49 municipios en 10 departamentos. Reconocida con el Premio Flor Ángela Gómez de Asobancaria.</p>
+                            </div>
+                            <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
+                                <h4 class="font-bold text-midnight-900 text-base"><i class="fa-solid fa-child text-warm-500 mr-2"></i> Alianza Fundación Ábacos</h4>
+                                <p class="text-sm text-slate-600 mt-1">Modelo pedagógico de educación económica para niños de 3 a 5 años y sus familias.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Ambiente -->
+                <div id="tab-content-ambiente" class="tab-content hidden space-y-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <span class="px-3 py-1 bg-nature-100 text-nature-600 font-bold text-xs rounded-full uppercase">Acción Climática</span>
+                            <h3 class="text-2xl font-bold font-display text-midnight-900 mt-3">Restauración Ecológica & Tarjeta Débito Amazonía</h3>
+                            <p class="text-slate-600 mt-3 leading-relaxed">
+                                Unimos la bancarización responsable con la reforestación activa en el Amazonas y la siembra de mangles en el Caribe colombiano.
+                            </p>
+
+                            <div class="grid grid-cols-2 gap-4 mt-6">
+                                <div class="p-4 bg-nature-100/50 rounded-2xl border border-nature-100">
+                                    <p class="text-2xl font-extrabold text-nature-600 font-display">+118.000</p>
+                                    <p class="text-xs text-slate-500 font-medium mt-1">Árboles Nativos Sembrados</p>
+                                </div>
+                                <div class="p-4 bg-nature-100/50 rounded-2xl border border-nature-100">
+                                    <p class="text-2xl font-extrabold text-nature-600 font-display">75.000 Ton</p>
+                                    <p class="text-xs text-slate-500 font-medium mt-1">CO2 Capturadas Estimadas</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
+                                <h4 class="font-bold text-midnight-900 text-base"><i class="fa-solid fa-credit-card text-midnight-800 mr-2"></i> Tarjeta Débito Amazonía</h4>
+                                <p class="text-sm text-slate-600 mt-1">28.000 tarjetas activas. El 1% de las compras financiaron la siembra directa de árboles y mangles.</p>
+                            </div>
+                            <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
+                                <h4 class="font-bold text-midnight-900 text-base"><i class="fa-solid fa-tree text-nature-600 mr-2"></i> Impacto Comunitario</h4>
+                                <p class="text-sm text-slate-600 mt-1">Generación de ingresos para +500 familias indígenas y pesqueras en Vaupés, Guainía y Bolívar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SIMULADOR INTERACTIVO DE DONACIÓN / CALCULADORA DE IMPACTO -->
+    <section id="simulador" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-midnight-900 to-midnight-800 text-white rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden">
+                <div class="relative z-10">
+                    <div class="text-center max-w-2xl mx-auto mb-10">
+                        <span class="px-4 py-1.5 bg-white/10 rounded-full text-brand-yellow font-bold text-xs uppercase tracking-wider backdrop-blur-md">Simulador de Impacto</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold font-display mt-3">Calcula el alcance de tu aporte</h2>
+                        <p class="text-midnight-200 text-sm sm:text-base mt-2">Mueve la barra interactiva para descubrir la transformación real que genera tu contribución.</p>
+                    </div>
+
+                    <!-- Slider Container -->
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/10 space-y-8">
+                        <div>
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="text-sm font-semibold text-midnight-200">Monto Aportado:</span>
+                                <span id="donation-amount-display" class="text-3xl font-extrabold font-display text-brand-yellow">$ 100.000 COP</span>
+                            </div>
+                            <input type="range" id="donation-range" min="20000" max="500000" step="10000" value="100000" class="w-full h-3 bg-midnight-900/60 rounded-lg appearance-none cursor-pointer accent-brand-yellow">
+                            <div class="flex justify-between text-xs text-midnight-200 mt-2 font-medium">
+                                <span>$ 20.000 COP</span>
+                                <span>$ 250.000 COP</span>
+                                <span>$ 500.000 COP</span>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Results Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/10 text-center">
+                            <div class="p-4 bg-white/5 rounded-xl border border-white/5">
+                                <i class="fa-solid fa-tree text-nature-500 text-2xl mb-2"></i>
+                                <p id="trees-calc" class="text-2xl font-bold font-display text-white">10</p>
+                                <p class="text-xs text-midnight-200 mt-1">Árboles nativos sembrados</p>
+                            </div>
+                            <div class="p-4 bg-white/5 rounded-xl border border-white/5">
+                                <i class="fa-solid fa-graduation-cap text-brand-yellow text-2xl mb-2"></i>
+                                <p id="kids-calc" class="text-2xl font-bold font-display text-white">4</p>
+                                <p class="text-xs text-midnight-200 mt-1">Niños capacitados en finanzas</p>
+                            </div>
+                            <div class="p-4 bg-white/5 rounded-xl border border-white/5">
+                                <i class="fa-solid fa-book text-warm-500 text-2xl mb-2"></i>
+                                <p id="days-calc" class="text-2xl font-bold font-display text-white">15</p>
+                                <p class="text-xs text-midnight-200 mt-1">Días de auxilio educativo</p>
+                            </div>
+                        </div>
+
+                        <div class="text-center pt-2">
+                            <button onclick="openModalWithAmount()" class="px-8 py-3.5 rounded-full font-bold text-midnight-900 bg-brand-yellow hover:bg-yellow-400 shadow-md transition-all">
+                                Donar este Monto Ahora
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. HISTORIAS REALES DE IMPACTO -->
+    <section id="historias" class="py-20 bg-midnight-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs uppercase font-extrabold tracking-widest text-midnight-800">Testimonios Territoriales</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-midnight-900 mt-2">Historias Reales de Impacto</h2>
+                <p class="text-slate-600 mt-2">Conoce a los protagonistas detrás de los resultados en las regiones.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Story Card 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-shadow flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&q=80" alt="Ambalema Tolima" class="w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-midnight-900 text-xs font-bold px-3 py-1 rounded-full">Ambalema, Tolima</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-bold text-xl font-display text-midnight-900">Educación Financiera y Turismo Sostenible</h3>
+                            <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                                Se capacitaron 447 personas entre niños y microempresarios locales, fortaleciendo la economía comunitaria y promoviendo el turismo responsable en el municipio.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-midnight-800"><i class="fa-solid fa-users mr-1"></i> 447 Beneficiarios</span>
+                            <span class="text-xs text-slate-400">Año 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story Card 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-shadow flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Becaria Talento Digital" class="w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-midnight-900 text-xs font-bold px-3 py-1 rounded-full">Talento STEM</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-bold text-xl font-display text-midnight-900">Becaria de Talento Digital Juan María Robledo</h3>
+                            <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                                Apoyo a estudiantes de ingeniería y ciencias de la computación. Más de 46 becarios realizaron sus prácticas profesionales directamente en la organización.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-midnight-800"><i class="fa-solid fa-graduation-cap mr-1"></i> 58% Mujeres</span>
+                            <span class="text-xs text-slate-400">Año 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story Card 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-shadow flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=800&q=80" alt="Comunidades Indígenas" class="w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-nature-600 font-bold text-xs px-3 py-1 rounded-full">Vaupés & Guainía</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-bold text-xl font-display text-midnight-900">Familias Guardianas de la Amazonía</h3>
+                            <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                                Creación de empleo para más de 300 personas en comunidades indígenas locales, asegurando ingresos estables mediante la siembra de frutales y conservación de bosques.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-nature-600"><i class="fa-solid fa-leaf mr-1"></i> +500 Familias</span>
+                            <span class="text-xs text-slate-400">Año 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. SECCIÓN DE TRANSPARENCIA & DESCARGA DE INFORME -->
+    <section id="transparencia" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-midnight-900 rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden shadow-2xl">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                    <div class="lg:col-span-8 space-y-4">
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-brand-yellow font-bold text-xs uppercase tracking-wider">Rendición de Cuentas</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold font-display">Informe de Gestión y Sostenibilidad 2025</h2>
+                        <p class="text-midnight-200 text-sm sm:text-base leading-relaxed max-w-2xl">
+                            Conoce detalladamente nuestros indicadores financieros, proyectos territoriales y la ejecucion presupuestal bajo los más altos estándares de gobernanza y transparencia.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-4 text-center lg:text-right">
+                        <a href="#" onclick="alert('Iniciando descarga del Informe de Gestión y Sostenibilidad 2025 (PDF)...'); return false;" class="inline-flex items-center px-8 py-4 rounded-full font-bold text-midnight-900 bg-brand-yellow hover:bg-yellow-400 shadow-xl transition-all transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-file-pdf mr-2 text-xl"></i> Descargar Informe (PDF)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. FOOTER COMPLETO -->
+    <footer class="bg-midnight-900 text-white pt-16 pb-12 border-t border-midnight-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-midnight-800">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-midnight-900 font-bold">
+                            <span class="text-brand-yellow font-display">B</span>
+                        </div>
+                        <span class="text-xl font-bold font-display tracking-tight">Fundación Banco de Bogotá</span>
+                    </div>
+                    <p class="text-xs text-midnight-200 leading-relaxed max-w-sm">
+                        Entidad sin ánimo de lucro dedicada a promover el desarrollo sostenible, el emprendimiento y el bienestar integral de las comunidades en Colombia.
+                    </p>
+                    <p class="text-xs text-midnight-200">
+                        <strong>NIT:</strong> 860.024.437-9<br>
+                        <strong>Domicilio:</strong> Calle 36 No. 7-47, Piso 15, Bogotá D.C.
+                    </p>
+                </div>
+
+                <!-- Col 2: Navigation Links -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-brand-yellow mb-4">Navegación</h4>
+                    <ul class="space-y-2 text-xs text-midnight-200">
+                        <li><a href="#nosotros" class="hover:text-white transition-colors">Nosotros</a></li>
+                        <li><a href="#frentes" class="hover:text-white transition-colors">Frentes Estratégicos</a></li>
+                        <li><a href="#simulador" class="hover:text-white transition-colors">Calculadora de Impacto</a></li>
+                        <li><a href="#historias" class="hover:text-white transition-colors">Historias de Éxito</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Strategic Programs -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-brand-yellow mb-4">Programas</h4>
+                    <ul class="space-y-2 text-xs text-midnight-200">
+                        <li><a href="#frentes" class="hover:text-white transition-colors">EcoTech & Impact Hub</a></li>
+                        <li><a href="#frentes" class="hover:text-white transition-colors">Becas Juan María Robledo</a></li>
+                        <li><a href="#frentes" class="hover:text-white transition-colors">Finanzas Contigo (Aula Móvil)</a></li>
+                        <li><a href="#frentes" class="hover:text-white transition-colors">Tarjeta Débito Amazonía</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Social & Strategic Alliance -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-brand-yellow mb-4">Red de Aliados</h4>
+                    <p class="text-xs text-midnight-200 leading-relaxed mb-4">
+                        Miembro del Grupo Aval y articulados con organizaciones de alto impacto territorial.
+                    </p>
+                    <div class="flex space-x-3 text-lg text-midnight-200">
+                        <a href="#" class="hover:text-brand-yellow transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="hover:text-brand-yellow transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-brand-yellow transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-brand-yellow transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-midnight-200">
+                <p>&copy; 2026 Fundación Banco de Bogotá. Todos los derechos reservados.</p>
+                <div class="flex space-x-6 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-white">Términos y Condiciones</a>
+                    <a href="#" class="hover:text-white">Política de Privacidad</a>
+                    <a href="#" class="hover:text-white">Canal Ético</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 9. MODAL INTERACTIVO DE DONACIÓN -->
+    <div id="donation-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+        <!-- Backdrop -->
+        <div onclick="toggleModal(false)" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"></div>
+
+        <!-- Modal Box -->
+        <div class="flex items-center justify-center min-h-screen p-4 text-center sm:p-0">
+            <div class="relative bg-white rounded-3xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full border border-slate-100 p-6 sm:p-8 space-y-6 z-10">
+                
+                <div class="flex justify-between items-center pb-4 border-b border-slate-100">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded-lg bg-midnight-200 flex items-center justify-center text-midnight-800">
+                            <i class="fa-solid fa-heart text-sm"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-display text-midnight-900">Realizar una Donación</h3>
+                    </div>
+                    <button onclick="toggleModal(false)" class="text-slate-400 hover:text-slate-600 text-xl font-bold p-1">
+                        &times;
+                    </button>
+                </div>
+
+                <form onsubmit="handleDonation(event)" class="space-y-4">
+                    <!-- Target Program -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Programa Destino</label>
+                        <select id="modal-program" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-midnight-800 focus:outline-none bg-slate-50">
+                            <option value="todos">Fondo General de Impacto Social</option>
+                            <option value="amazonia">Reforestación Amazonía y Mangles</option>
+                            <option value="becas">Becas Universitarias STEM</option>
+                            <option value="ecotech">Aceleración EcoTech Startups</option>
+                        </select>
+                    </div>
+
+                    <!-- Amount Selection -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Monto a Aportar (COP)</label>
+                        <input type="number" id="modal-amount" value="100000" min="10000" step="5000" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-base font-bold text-midnight-900 focus:ring-2 focus:ring-midnight-800 focus:outline-none bg-slate-50">
+                    </div>
+
+                    <!-- Payment Gateway Option -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Medio de Pago</label>
+                        <div class="grid grid-cols-3 gap-3">
+                            <label class="border border-slate-200 rounded-xl p-3 text-center cursor-pointer hover:bg-slate-50 flex flex-col items-center justify-center space-y-1">
+                                <input type="radio" name="payment" value="pse" checked class="accent-midnight-800">
+                                <span class="text-xs font-bold text-slate-700">PSE</span>
+                            </label>
+                            <label class="border border-slate-200 rounded-xl p-3 text-center cursor-pointer hover:bg-slate-50 flex flex-col items-center justify-center space-y-1">
+                                <input type="radio" name="payment" value="card" class="accent-midnight-800">
+                                <span class="text-xs font-bold text-slate-700">Tarjeta</span>
+                            </label>
+                            <label class="border border-slate-200 rounded-xl p-3 text-center cursor-pointer hover:bg-slate-50 flex flex-col items-center justify-center space-y-1">
+                                <input type="radio" name="payment" value="aval" class="accent-midnight-800">
+                                <span class="text-xs font-bold text-slate-700">Puntos Aval</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Personal info -->
+                    <div class="space-y-3 pt-2">
+                        <input type="text" placeholder="Nombre completo" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-midnight-800">
+                        <input type="email" placeholder="Correo electrónico" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-midnight-800">
+                    </div>
+
+                    <button type="submit" class="w-full py-4 rounded-xl font-bold text-white bg-midnight-800 hover:bg-midnight-900 shadow-lg transition-all text-center text-sm mt-4">
+                        Completar Donación
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Tab switching logic
+        function switchTab(tabId) {
+            // Hide all contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+                content.classList.remove('block');
+            });
+            // Reset button styles
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-midnight-800', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-700');
+            });
+
+            // Show selected content
+            const activeContent = document.getElementById(`tab-content-${tabId}`);
+            if (activeContent) {
+                activeContent.classList.remove('hidden');
+                activeContent.classList.add('block');
+            }
+
+            // Highlight selected button
+            const activeBtn = document.getElementById(`tab-btn-${tabId}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-white', 'text-slate-700');
+                activeBtn.classList.add('bg-midnight-800', 'text-white');
+            }
+        }
+
+        // Calculator logic
+        const rangeInput = document.getElementById('donation-range');
+        const amountDisplay = document.getElementById('donation-amount-display');
+        const treesCalc = document.getElementById('trees-calc');
+        const kidsCalc = document.getElementById('kids-calc');
+        const daysCalc = document.getElementById('days-calc');
+
+        if (rangeInput) {
+            rangeInput.addEventListener('input', (e) => {
+                const val = parseInt(e.target.value);
+                
+                // Format Currency
+                amountDisplay.innerText = `$ ${val.toLocaleString('es-CO')} COP`;
+
+                // Real-time calculations
+                const trees = Math.floor(val / 10000);
+                const kids = Math.floor(val / 25000);
+                const days = Math.floor(val / 6500);
+
+                treesCalc.innerText = trees;
+                kidsCalc.innerText = kids;
+                daysCalc.innerText = days;
+            });
+        }
+
+        // Modal toggle logic
+        function toggleModal(show) {
+            const modal = document.getElementById('donation-modal');
+            if (show) {
+                modal.classList.remove('hidden');
+            } else {
+                modal.classList.add('hidden');
+            }
+        }
+
+        function openModalWithAmount() {
+            const currentAmount = rangeInput.value;
+            document.getElementById('modal-amount').value = currentAmount;
+            toggleModal(true);
+        }
+
+        function handleDonation(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu apoyo! Tu donación ha sido procesada de manera exitosa.');
+            toggleModal(false);
+        }
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
